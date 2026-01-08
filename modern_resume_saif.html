@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saif Shaikh - Resume</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 20px;
+            color: #2d3748;
+        }
+        
+        .page {
+            max-width: 850px;
+            margin: 0 auto 30px;
+            background: white;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            min-height: 1100px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .page::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+            color: white;
+            padding: 50px 60px 40px;
+            position: relative;
+        }
+        
+        .header-pattern {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 100%;
+            opacity: 0.1;
+            background-image: 
+                repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,.1) 10px, rgba(255,255,255,.1) 20px);
+        }
+        
+        h1 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .tagline {
+            font-size: 16px;
+            color: #a0aec0;
+            margin-bottom: 25px;
+            font-weight: 300;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .contact-info {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+            font-size: 14px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #cbd5e0;
+        }
+        
+        .contact-item::before {
+            content: '●';
+            color: #667eea;
+        }
+        
+        .content {
+            padding: 50px 60px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: #764ba2;
+        }
+        
+        .summary-text {
+            line-height: 1.8;
+            color: #4a5568;
+            font-size: 15px;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+        
+        .skill-category {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .skill-category h3 {
+            font-size: 16px;
+            color: #2d3748;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .skill-tag {
+            background: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            color: #4a5568;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .experience-item {
+            margin-bottom: 30px;
+            padding-left: 25px;
+            border-left: 2px solid #e2e8f0;
+            position: relative;
+        }
+        
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 5px;
+            width: 10px;
+            height: 10px;
+            background: #667eea;
+            border-radius: 50%;
+            border: 2px solid white;
+            box-shadow: 0 0 0 2px #e2e8f0;
+        }
+        
+        .job-header {
+            margin-bottom: 12px;
+        }
+        
+        .job-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 4px;
+        }
+        
+        .company {
+            font-size: 15px;
+            color: #667eea;
+            font-weight: 500;
+        }
+        
+        .duration {
+            font-size: 13px;
+            color: #718096;
+            margin-top: 4px;
+        }
+        
+        .job-description {
+            color: #4a5568;
+            line-height: 1.7;
+            font-size: 14px;
+            margin-top: 8px;
+        }
+        
+        .job-description ul {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+        
+        .job-description li {
+            margin-bottom: 6px;
+        }
+        
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+        
+        .cert-item {
+            background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
+            padding: 15px;
+            border-radius: 6px;
+            font-size: 14px;
+            color: #553c9a;
+            border-left: 3px solid #764ba2;
+        }
+        
+        .education-item {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .degree {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1e40af;
+            margin-bottom: 4px;
+        }
+        
+        .university {
+            font-size: 14px;
+            color: #475569;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .page {
+                box-shadow: none;
+                margin: 0;
+                page-break-after: always;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- PAGE 1 -->
+    <div class="page">
+        <div class="header">
+            <div class="header-pattern"></div>
+            <h1>SAIF SHAIKH</h1>
+            <div class="tagline">Operations & Inventory Leader | Lean Six Sigma Black Belt | Process Excellence Specialist</div>
+            <div class="contact-info">
+                <div class="contact-item">7666994050</div>
+                <div class="contact-item">Thane, Maharashtra</div>
+                <div class="contact-item">linkedin.com/in/saif-shaikh11</div>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <h2 class="section-title">Professional Summary</h2>
+                <p class="summary-text">
+                    Results-driven Operations & Inventory Management Leader with 6+ years of experience optimizing large-scale fulfillment operations across India's top e-commerce platforms. Proven expertise in driving operational excellence through data analytics, process automation, and Lean Six Sigma methodologies. Track record of managing critical functions including Cycle Count, Outbound Operations, SBS QC, and KPI/MIS frameworks—consistently delivering measurable improvements in accuracy, efficiency, and team performance. Passionate about transforming complex data into actionable strategies that drive sustainable business impact.
+                </p>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Core Competencies</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Operations Excellence</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Warehouse Operations</span>
+                            <span class="skill-tag">Inventory Management</span>
+                            <span class="skill-tag">Outbound IRT</span>
+                            <span class="skill-tag">Cycle Count Leadership</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Process Optimization</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Lean Six Sigma Black Belt</span>
+                            <span class="skill-tag">Process Automation</span>
+                            <span class="skill-tag">Workflow Optimization</span>
+                            <span class="skill-tag">Root Cause Analysis</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Data & Analytics</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">KPI/MIS Management</span>
+                            <span class="skill-tag">Business Analytics</span>
+                            <span class="skill-tag">Data-Driven Decision Making</span>
+                            <span class="skill-tag">Performance Metrics</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Leadership & Tech</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Team Management</span>
+                            <span class="skill-tag">Supply Chain Planning</span>
+                            <span class="skill-tag">GenAI Applications</span>
+                            <span class="skill-tag">Web Development</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Professional Experience</h2>
+                
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div class="job-title">Senior Executive - Operations & Inventory Management</div>
+                        <div class="company">Flipkart</div>
+                        <div class="duration">August 2022 - Present | Saidham, Maharashtra</div>
+                    </div>
+                    <div class="job-description">
+                        <ul>
+                            <li>Leading end-to-end operations for high-volume fulfillment center, driving process excellence across Cycle Count, Outbound Operations, and Quality Control</li>
+                            <li>Architecting and managing comprehensive KPI/MIS frameworks that transformed raw operational data into actionable insights, reducing cycle time by identifying bottlenecks and optimizing resource allocation</li>
+                            <li>Spearheading Lean Six Sigma initiatives to eliminate waste, improve accuracy, and enhance operational efficiency across multiple departments</li>
+                            <li>Managing cross-functional teams to consistently exceed SLA targets while maintaining quality standards</li>
+                            <li>Implementing data-driven process improvements using analytics and automation tools to scale operations effectively</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div class="job-title">Junior Executive - Multi-Site Operations</div>
+                        <div class="company">Flipkart</div>
+                        <div class="duration">February 2020 - August 2022 | Bhiwandi & Mankoli, Maharashtra</div>
+                    </div>
+                    <div class="job-description">
+                        <ul>
+                            <li><strong>C1C2 Operations (9 months):</strong> Managed daily operations, optimized picking efficiency, and coordinated with multiple departments to ensure seamless order fulfillment</li>
+                            <li><strong>B2 Mankoli (1 month):</strong> Led outbound operations during peak season, ensuring on-time dispatch and quality compliance</li>
+                            <li><strong>Bhiwandi BTS (7 months):</strong> Oversaw inventory accuracy initiatives and implemented process improvements that reduced discrepancies</li>
+                            <li><strong>Saidham Operations:</strong> Transitioned facility operations and established standardized workflows for sustainable performance</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- PAGE 2 -->
+    <div class="page">
+        <div class="header">
+            <div class="header-pattern"></div>
+            <h1>SAIF SHAIKH</h1>
+            <div class="tagline">Page 2 of 2</div>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <h2 class="section-title">Professional Experience (Continued)</h2>
+                
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div class="job-title">Junior Executive - Outbound Operations</div>
+                        <div class="company">Flipkart</div>
+                        <div class="duration">August 2019 - December 2019 | C1-C2 Mankoli, Maharashtra</div>
+                    </div>
+                    <div class="job-description">
+                        <ul>
+                            <li>Published hourly and weekly performance reports, enabling real-time visibility into operational health</li>
+                            <li>Resolved critical outbound issues impacting dispatch timelines, maintaining service level agreements</li>
+                            <li>Collaborated with cross-functional stakeholders to optimize resource planning and workflow efficiency</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div class="job-title">Junior Executive - Issue Resolution Specialist</div>
+                        <div class="company">Flipkart</div>
+                        <div class="duration">August 2018 - December 2018 | Kalwar, Maharashtra</div>
+                    </div>
+                    <div class="job-description">
+                        Served as Outbound Packing Issue Resolver, identifying and eliminating systemic packing errors that impacted customer experience and operational costs.
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div class="job-title">Data Entry Operator - Inventory Audit</div>
+                        <div class="company">Myntra</div>
+                        <div class="duration">October 2017 - April 2018 | Bhiwandi, Maharashtra</div>
+                    </div>
+                    <div class="job-description">
+                        Conducted comprehensive stock audits and quality checks, ensuring inventory accuracy and data integrity across fashion fulfillment operations.
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div class="job-title">Associate - Fulfillment Operations</div>
+                        <div class="company">Amazon</div>
+                        <div class="duration">April 2019 - May 2019 | Bhiwandi, Maharashtra</div>
+                    </div>
+                    <div class="job-description">
+                        Gained foundational experience in large-scale warehouse operations, consistently meeting productivity targets while maintaining quality standards in a high-volume picking environment.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Certifications & Professional Development</h2>
+                <div class="certifications-grid">
+                    <div class="cert-item">✓ Lean Six Sigma Black Belt</div>
+                    <div class="cert-item">✓ Team Management for the 6σ Black Belt</div>
+                    <div class="cert-item">✓ Supply Chain Planning</div>
+                    <div class="cert-item">✓ The Measure Phase for the 6σ Black Belt</div>
+                    <div class="cert-item">✓ GenAI for Executives & Business Leaders</div>
+                    <div class="cert-item">✓ Organization Planning & Development for 6σ Black Belt</div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Education</h2>
+                <div class="education-item">
+                    <div class="degree">Bachelor of Commerce (B.Com) - Business & Commerce</div>
+                    <div class="university">University of Mumbai | 2018 - 2021</div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">What Sets Me Apart</h2>
+                <p class="summary-text">
+                    I don't just manage operations—I transform them. My approach combines strategic data analytics with hands-on execution, enabling me to identify inefficiencies, implement scalable solutions, and mentor teams toward consistent high performance. With expertise spanning India's leading e-commerce platforms and certifications in Lean Six Sigma and GenAI, I bring a unique blend of operational rigor and innovative thinking to drive measurable business impact. I'm curious, decisive, and committed to continuous improvement—qualities that fuel my passion for building efficient systems and empowering teams to excel.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
